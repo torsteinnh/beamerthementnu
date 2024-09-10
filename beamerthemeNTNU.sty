@@ -43,16 +43,16 @@
 \newcommand{\ntnu@logofile}{}
 \DeclareOptionBeamer{slogan}[english]{
 	\ifnum\pdf@strcmp{#1}{english}=\z@%
- 		\renewcommand{\ntnu@logofile}{ntnu_bredde_eng.png}%
- 		\titlelogo{ntnu_bredde_eng_neg.png}%
+ 		\renewcommand{\ntnu@logofile}{images/ntnu_bredde_eng.png}%
+ 		\titlelogo{images/ntnu_bredde_eng_neg.png}%
 		\renewcommand{\ntnu@name}{Norwegian University of Science and Technology}
-		\renewcommand{\ntnu@sidelogo}{ntnu_alt_versjon_uten_slagord_neg.png}
+		\renewcommand{\ntnu@sidelogo}{images/ntnu_alt_versjon_uten_slagord_neg.png}
  	\fi
 	\ifnum\pdf@strcmp{#1}{norsk}=\z@%
- 		\renewcommand{\ntnu@logofile}{ntnu_med_slagord_bredde_bokmaal.png}%
- 		\titlelogo{ntnu_med_slagord_bredde_bokmaal_neg.png}%
+ 		\renewcommand{\ntnu@logofile}{images/ntnu_med_slagord_bredde_bokmaal.png}%
+ 		\titlelogo{images/ntnu_med_slagord_bredde_bokmaal_neg.png}%
 		\renewcommand{\ntnu@name}{Norges teknisk-naturvitenskapelige universitet}
-		\renewcommand{\ntnu@sidelogo}{ntnu_alt_versjon_uten_slagord_neg.png}
+		\renewcommand{\ntnu@sidelogo}{images/ntnu_alt_versjon_uten_slagord_neg.png}
  	\fi
 }
 \ExecuteOptionsBeamer{slogan}

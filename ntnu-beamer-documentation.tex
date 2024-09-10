@@ -1,19 +1,20 @@
 \documentclass[aspectratio=169]{beamer}
+
 \usepackage[english]{babel}
-\usepackage{booktabs,listings,pdfpages, biblatex}
-\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs, listings, pdfpages, biblatex, csquotes}
+
 \lstset{basicstyle=\ttfamily}
 \setlength{\parskip}{.5\baselineskip}
 \usetheme[slogan=english, style=vertical]{NTNU}
-\addbibresource{demo.bib}
-%
-% Edit your meta data here
-%
-	\title{\LaTeX{}-Beamer Style for NTNU}
-	\subtitle{Documentation.}
-	\author{Ronny Bergmann}
-	\date{\today}
+\addbibresource{ref.bib}
+
+
+\title{\LaTeX{}-Beamer Style for NTNU}
+\subtitle{Documentation}
+\author{Ronny Bergmann, Torstein Nordgård-Hansen}
+\date{\today}
 
 \begin{document}
 	\maketitle
@@ -21,41 +22,47 @@
 		\tableofcontents
 	\end{frame}
 
+
 	\section{Introduction}
-		\begin{frame}{The \LaTeX{} beamer NTNU Theme}
+		\begin{frame}{The \LaTeX{} beamer NTNU theme}
 			This \LaTeX beamer theme is based on the Powerpoint templates available at \href{https://innsida.ntnu.no/wiki/-/wiki/English/Create+NTNU+presentations\#section-Create+NTNU+presentations-Powerpoint+templates}{Innsida}.
 			The design of these templates is owned by NTNU, and should not be altered
 	substantially without checking it with the \href{https://www.ntnu.no/adm/komm}{Communication Division}.
 
 			This documentation assumes that you have your editor and \LaTeX{} compiler set up and running. For \LaTeX{} beamer, the full documentation is available at \url{https://texdoc.org/serve/beamer/0}.
 
-			This documentation
+			This documentation:
 			\begin{itemize}
-				\item gets you started (slide \#\ref{slide:start})
-				\item illustrates what the three styles look like (demo after slide \#\ref{slide:styles-demo} onwards)
-				\item documents all available options and features (Slide \#\ref{slide:developer})
+				\item Gets you started (slide \#\ref{slide:start})
+				\item Illustrates what the three styles look like (slide \#\ref{slide:styles-demo})
+				\item Documents all available options and features (slide \#\ref{slide:developer})
 			\end{itemize}
 		\end{frame}
-	\section{Getting started}
-		\begin{frame}[fragile]{Start A Presentation}
+
+
+	\section{Getting Started}
+		\begin{frame}[fragile]{Start a presentation}
 			\label{slide:start}
 			\begin{enumerate}
-				\item Copy all eight \lstinline!.sty! files (Style files) and all seven \lstinline!.png! files (the logos) to the folder, where you want to write your presentation
-				\item Copy \alert{either} the \lstinline!ntnu-beamer-example-eng.tex!\\
-				\alert{or} the \lstinline!ntnu-beamer-example-eng.tex! to that folder, too
-				\item Open the just copied \lstinline!.tex! file and start writing your presentation, i.e.
+				\item Copy this folder to the desired location
+				\item Configre the language and style in the \lstinline!ntnu-beamer-example.tex! file as indicated by the comments
+				\item Comment out or remove unused package imports in the preample
+				\item Remove the \lstinline!ntnu-beamer-documentatin.tex! and \lstinline!ntnu-beamer-documentatin.pdf! files, as well as the \lstinline!demos! folder
+				\item Rename the \lstinline!ntnu-beamer-example.tex! file as desired
+				\item Open the just renamed \lstinline!.tex! file and start writing your presentation, i.e.
 				\begin{itemize}
-					\item fill out author and title
-					\item fill or comment out (\lstinline!%! at the beginning of the line) the subtitle
-					\item set the date or leave it at the current date
-					\item Start writing your slides (called \lstinline!frames!), two examples are already given in the template
+					\item Fill out author and title
+					\item Fill or comment out the subtitle
+					\item Set the date or leave it at the current date
+					\item Start writing your slides, two examples are already given in the template
 				\end{itemize}
 			\end{enumerate}
-			You can repeat this whenever you start preparing a new presentation.
 
 			A more elaborate way \emph{instead} of copying all files from step 1 is to
 			include them in your \LaTeX\ path.
 		\end{frame}
+
+
 	\section{Example Slides in Different Themes}
 	\begin{frame}[fragile]{Different styles}
 		\label{slide:styles-demo}
@@ -70,17 +77,20 @@
 
 		\lstinline!\usetheme[slogan=english, style=plain, mathfont=sans]{NTNU}!
 	\end{frame}
+
 	{
 		\setbeamercolor{background canvas}{bg=}
-		\includepdf[pages={1,2}]{demo-ntnu-plain.pdf}
-		\includepdf[pages={1,2}]{demo-ntnu-horizontal.pdf}
-		\includepdf[pages={1,2}]{demo-ntnu-vertical.pdf}
+		\includepdf[pages={1,2}]{demos/demo-ntnu-plain.pdf}
+		\includepdf[pages={1,2}]{demos/demo-ntnu-horizontal.pdf}
+		\includepdf[pages={1,2}]{demos/demo-ntnu-vertical.pdf}
 	}
+
+
 	\section{Developer Guide}
 		\begin{frame}[fragile]{Available options}
 			\label{slide:developer}
 			You can load the theme using
-
+			
 			\lstinline!\usetheme{NTNU}!
 
 			where you have the following options available
@@ -98,9 +108,10 @@
 				\bottomrule
 			\end{tabular}
 		\end{frame}
+		
 		\begin{frame}[fragile]{Outer themes}
 			\label{slide:outer}
-			The corporate design team provides four variants
+			The communication design team provides four variants, three of which have been implemented
 			\\\hfill{\small (outer themes in latex beamer)}
 
 			\begin{description}
@@ -109,7 +120,7 @@
 				\item[NTNUhorizontal] with a stripe at the bottom
 			\end{description}
 
-			They all three consist of an outer and an innter theme, but the easy way to activate these is the option
+			All three consist of an outer and an innter theme, these are activated by the style option of the main theme
 
 			\lstinline!style=plain|vertical|horizontal!
 
@@ -119,17 +130,19 @@
 
 			as shown on slide \#\ref{slide:styles-demo} and the following example slides.
 		\end{frame}
-		\begin{frame}[fragile]{special commands}
+		
+		\begin{frame}[fragile]{Special commands}
 			\begin{description}
 				\item[titlelogo]
-				Set the logo on the title page. By default, it is set to the negative english or norsk logo (depending on the chosen slogan), see the slogan option, e.g.\,
+				Set the logo on the title page. By default, it is set to the negative english or norwegian logo (depending on the chosen slogan), see the slogan option, e.g.\,
 				\lstinline!\titlelogo{ntnu_bredde_eng_neg.png}!
 			\end{description}
 		\end{frame}
+		
 		\begin{frame}{Special colors}
-	%		These colors are taken from \url{https://innsida.ntnu.no/wiki/-/wiki/Norsk/Farger+i+grafisk+profil}
+	 		These colors are taken from \url{https://innsida.ntnu.no/wiki/-/wiki/Norsk/Farger+i+grafisk+profil}
 			\begin{description}
-				\item[{\color{NTNUBlue} NTNUblue}] (\#{\color{NTNUBlue}00509e})
+				\item[{\color{NTNUBlue} NTNUBlue}] (\#{\color{NTNUBlue}00509e})
 				\item[{\color{NTNULightblue} NTNULightblue}] (\#{\color{NTNULightblue}6096d0})
 				\item[{\color{NTNUOrange} NTNUOrange}] (\#{\color{NTNUOrange}ef8114})
 				\item[{\color{NTNUPink} NTNUPink}] (\#{\color{NTNUPink}b01b81})
@@ -140,14 +153,16 @@
 				\item[{\color{LightGrey} LightGrey}] (\#{\color{LightGrey}bebebe})
 			\end{description}
 		\end{frame}
+		
 		\begin{frame}{Further configurations}
-			Currently all 3 colors of \lstinline!hyperref! are set to {\color{NTNUBlue} NTNUblue}, i.\,e.\
+			Currently all 3 colors of \lstinline!hyperref! are set to {\color{NTNUBlue} NTNUBlue}, i.\,e.\
 			\begin{itemize}
 				\item \lstinline!linkcolor! when referring to e.\,g.\ the demo slides slide \#\ref{slide:styles-demo} and following
 				\item \lstinline!urlcolor! when using URLs or hyperref links, for example when including this themes \href{https://github.com/ntnu-tex/beamerthementnu}{github page}
 				\item \lstinline!citecolor! when citing literature like \footfullcite{TeX-book}.
 			\end{itemize}
 		\end{frame}
+		
 		\begin{frame}{Required packages}
 			The following packages have to be installed for the theme to work
 			\begin{description}
@@ -163,5 +178,7 @@
 				\item[listings] for code highlighting
 				\item[pdfpages] to include the examples
 			\end{description}
+			This is handleded automatically by \href{https://overleaf.com}{Overleaf} or \href{https://www.tug.org/texlive/}{TeX~Live}
 		\end{frame}
+
 \end{document}

@@ -1,0 +1,56 @@
+\documentclass[aspectratio=169]{beamer}
+% Set language to "norsk", "english" or "british"
+\usepackage[english]{babel} % Set lanuage of automatically inserted text.
+\usepackage[T1]{fontenc} % Fix fonts
+\usepackage[utf8]{inputenc} % Fix typesetting when using pdflatex
+% Change style as desired
+\usepackage[backend=biber, style=ieee, sortcites]{biblatex} % Manage sources
+\usepackage{subfiles} %
+\usepackage{booktabs, listings, textcomp, float, csquotes} % Basic editing environments and utilities
+\usepackage{graphicx, xcolor} % Graphic utilities
+\usepackage{amsmath, unicode-math} % Mathematics
+
+
+% \setmathfont{asana-math} % Uncomment if obscure symbols are not rendered correctly
+
+\addbibresource{ref.bib}
+
+% Set slogan language to "norsk" or "english" as desired.
+% Set style as one of "plain", "horizontal", "vertical".
+\usetheme[slogan=norsk, style=plain]{NTNU}
+
+\title[Your Short Title]{Front page / put your title here}
+\subtitle{Subtitle}
+\author{Name of the author(s)}
+\date{\today}
+
+
+\begin{document}
+	\maketitle
+	\begin{frame}{Contents}
+		\tableofcontents
+	\end{frame}
+
+	\section{Introduction}
+	\begin{frame}{A typical slide}
+		\begin{itemize}
+			\item Start with an introduction
+			\item Use \texttt{itemize} or \texttt{enumerate} to organize your main points
+			\item Refer to sources with~\cite{TeX-book}
+			\item Write inline equations like this: $E = mc^2$
+		\end{itemize}
+		\begin{block}{Example}
+			Rather than freely writing text in the frame, the use of blocks (such as this) is recommended.
+			Here you can find a short introduction to the basics of beamer:
+			\begin{enumerate}
+				\item https://www.overleaf.com/learn/latex/beamer
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	\section{Sources}
+	\begin{frame}[allowframebreaks]{Sources}
+		\printbibliography
+	\end{frame}
+	
+\end{document}
