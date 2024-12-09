@@ -1,13 +1,19 @@
 %
 % Inner theme elements, most prominently the title page
 %
-\ProvidesPackage{beamerinnerthemeNTNUvertical}[2021/08/26/ 1.2 A LaTeX beamer theme in the corporate design of NTNU]
+\ProvidesPackage{beamerinnerthemeNTNUhorizontal}[2021/08/26/ 1.2 A LaTeX beamer theme in the corporate design of NTNU]
 \makeatletter
 \setbeamertemplate{navigation symbols}{}%
 \setbeamercolor{title}{fg=black}
 \setbeamercolor{subtitle}{fg=LightGrey}
-\defbeamertemplate*{title page}{NTNUvertical}{%
-    \vspace{.2\paperheight}
+\defbeamertemplate*{title page}{NTNUhorizontal}{%
+    \ifntnu@displayPartner%
+        \vspace{.05\paperheight}
+        \includegraphics[height=.2\paperheight,width=0.9\textwidth,keepaspectratio]{\ntnu@partnerlogo}%
+        \vskip2em%
+    \else%
+        \vspace{.2\paperheight}
+    \fi%
     {\usebeamerfont{title}\inserttitle\par}%
     \vskip0.5em%
     {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%

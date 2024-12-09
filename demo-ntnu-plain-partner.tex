@@ -1,0 +1,40 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[english]{babel}
+\usepackage{booktabs,listings}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\lstset{basicstyle=\ttfamily}
+\setlength{\parskip}{.5\baselineskip}
+\usetheme[slogan=english,style=plain,partner=true]{NTNU}
+\partnerlogos{ntnu_partner_neg.png}{ntnu_partner.png}
+\titlelogo{ntnu_uten_slagord_neg.png}
+%
+% Edit your meta data here
+%
+	\title{\LaTeX{}-Beamer Style for NTNU}
+	\subtitle{Demo of the  \texttt{plain} style including a partner logo}
+	\author{Author Name}
+	\date{\today}
+
+\begin{document}
+	\maketitle
+	\begin{frame}[fragile]{A slide in \texttt{plain} style including a partner logo}
+		This style is set up with
+
+		\lstinline!\usetheme[slogan=english, style=plain, partner=true]{NTNU}!
+
+		and the logos of the collaboration partners are set with
+
+		\lstinline!\partnerlogos{ntnu_partner_neg.png}{ntnu_partner.png}!
+
+		The \texttt{plain} style displays the second logo of the
+		collaboration partner (\lstinline!ntnu_partner.png!) in the
+		bottom center of each slide while the first logo
+		(\lstinline!ntnu_partner_neg.png!, preferable white/light colors)
+		is placed above the title (see previous slide). Since the partner
+		logo is place next to the title logo of NTNU, the title logo is
+		changed to a smaller version with
+
+		\lstinline!\titlelogo{ntnu_uten_slagord_neg.png}!
+	\end{frame}
+\end{document}

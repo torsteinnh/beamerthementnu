@@ -32,44 +32,57 @@
 \newcommand{\titlelogo}[1]{\renewcommand{\ntnu@titlelogo}{#1}}
 \newcommand{\ntnu@name}{}
 \newcommand{\ntnu@sidelogo}{}
+\newcommand{\ntnu@footlogo}{}
 \newlength{\footlineheight}
+\newcommand{\ntnu@partnerlogo}{}
+\newcommand{\ntnu@partnerfootlogo}{}
+\newcommand{\partnerlogos}[2]{%
+	\renewcommand{\ntnu@partnerlogo}{#1}%
+	\renewcommand{\ntnu@partnerfootlogo}{#2}%
+}
+
+
 %
 % Options
 %
-% (1) display total frame number
-%
-%  Option: Display Total Frame Number in Footline (only inf visible) on_/off
+%  Option: Language of slogans and logos
 %
 \newcommand{\ntnu@logofile}{}
 \DeclareOptionBeamer{slogan}[english]{
 	\ifnum\pdf@strcmp{#1}{english}=\z@%
- 		\renewcommand{\ntnu@logofile}{ntnu_bredde_eng.png}%
- 		\titlelogo{ntnu_bredde_eng_neg.png}%
+		\renewcommand{\ntnu@logofile}{ntnu_bredde_eng.png}%
+		\titlelogo{ntnu_bredde_eng_neg.png}%
 		\renewcommand{\ntnu@name}{Norwegian University of Science and Technology}
 		\renewcommand{\ntnu@sidelogo}{ntnu_alt_versjon_uten_slagord_neg.png}
- 	\fi
+		\renewcommand{\ntnu@footlogo}{ntnu_uten_slagord_neg.png}
+		\partnerlogos{ntnu_bredde_eng.png}{ntnu_bredde_eng_neg.png}
+	\fi
 	\ifnum\pdf@strcmp{#1}{norsk}=\z@%
- 		\renewcommand{\ntnu@logofile}{ntnu_med_slagord_bredde_bokmaal.png}%
- 		\titlelogo{ntnu_med_slagord_bredde_bokmaal_neg.png}%
+		\renewcommand{\ntnu@logofile}{ntnu_med_slagord_bredde_bokmaal.png}%
+		\titlelogo{ntnu_med_slagord_bredde_bokmaal_neg.png}%
 		\renewcommand{\ntnu@name}{Norges teknisk-naturvitenskapelige universitet}
 		\renewcommand{\ntnu@sidelogo}{ntnu_alt_versjon_uten_slagord_neg.png}
- 	\fi
+		\renewcommand{\ntnu@footlogo}{ntnu_uten_slagord_neg.png}
+		\partnerlogos{ntnu_med_slagord_bredde_bokmaal.png}{ntnu_med_slagord_bredde_bokmaal_neg.png}
+	\fi
 }
 \ExecuteOptionsBeamer{slogan}
-
+%
+%  Option: template style
+%
 \DeclareOptionBeamer{style}[plain]{
 	\ifnum\pdf@strcmp{#1}{plain}=\z@%
 		\useinnertheme{NTNUplain}%
 		\useoutertheme{NTNUplain}%
- 	\fi
+	\fi
 	\ifnum\pdf@strcmp{#1}{vertical}=\z@%
 		\useinnertheme{NTNUvertical}%
 		\useoutertheme{NTNUvertical}%
- 	\fi
+	\fi
 	\ifnum\pdf@strcmp{#1}{horizontal}=\z@%
 		\useinnertheme{NTNUhorizontal}%
 		\useoutertheme{NTNUhorizontal}%
- 	\fi
+	\fi
 }
 \ExecuteOptionsBeamer{style}
 %
@@ -86,14 +99,29 @@
 \DeclareOptionBeamer{hideframetotal}{%
 	\ntnu@displayTotalFrameNumberfalse%
 }
-
+%
+%  Option: Font for math environments
+%
 \DeclareOptionBeamer{mathfont}[sans]{
 	\ifnum\pdf@strcmp{#1}{serif}=\z@%
 		\renewcommand\mathfamilydefault{\rmdefault}
 	\fi
 }
 \ExecuteOptionsBeamer{mathfont}
-
+%
+%  Option: Display partner Logo
+%
+\newif\ifntnu@displayPartner%
+%
+\DeclareOptionBeamer{partner}[false]{\csname ntnu@displayPartner#1\endcsname}
+\ExecuteOptionsBeamer{partner}
+% alternative variants
+\DeclareOptionBeamer{displaypartner}{%
+	\ntnu@displayPartnertrue%
+}
+\DeclareOptionBeamer{hidepartner}{%
+	\ntnu@displayPartnerfalse%
+}
 
 
 %

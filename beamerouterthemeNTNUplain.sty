@@ -12,10 +12,17 @@
 	\leavevmode%
 	\centering
 	\hbox{
-	\begin{beamercolorbox}[wd=.666666\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,left]{palette tertiary}%
-		\hspace{3em}\includegraphics[width=.3\textwidth]{\ntnu@logofile}
-		\end{beamercolorbox}\hspace{-1pt}%Hacked up to now
-		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,right]{palette tertiary}%
+		\begin{beamercolorbox}[wd=.401\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,left]{palette tertiary}%
+			\hspace{3em}%
+			\includegraphics[height=.6\footlineheight,width=.35\paperwidth,keepaspectratio]{\ntnu@logofile}%
+		\end{beamercolorbox}\hspace{-.001\paperwidth}% overlap to prevent gaps
+		\begin{beamercolorbox}[wd=.401\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,right]{palette tertiary}%
+			\hfill%
+			\ifntnu@displayPartner%
+				\includegraphics[height=.6\footlineheight,width=.35\paperwidth,keepaspectratio]{\ntnu@partnerfootlogo}%
+			\fi%
+		\end{beamercolorbox}\hspace{-.001\paperwidth}% overlap to prevent gaps
+		\begin{beamercolorbox}[wd=.2\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,right]{palette tertiary}%
             \hfill
             \usebeamercolor[fg]{page number in head/foot}%
     		\usebeamerfont{page number in head/foot}

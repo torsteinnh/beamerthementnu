@@ -1,0 +1,35 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[english]{babel}
+\usepackage{booktabs,listings}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\lstset{basicstyle=\ttfamily}
+\setlength{\parskip}{.5\baselineskip}
+\usetheme[slogan=norsk,style=horizontal,partner=true]{NTNU}
+\partnerlogos{ntnu_partner.png}{ntnu_partner_neg.png}
+%
+% Edit your meta data here
+%
+	\title{\LaTeX{}-Beamer Style for NTNU}
+	\subtitle{Demo of the  \texttt{horizontal} style including a partner logo}
+	\author{Author Name}
+	\date{\today}
+
+\begin{document}
+	\maketitle
+	\begin{frame}[fragile]{A slide in \texttt{horizontal} style including a partner logo}
+		This style is set up with
+
+		\lstinline!\usetheme[slogan=norsk, style=horizontal, partner=true]{NTNU}!
+
+		and the logos of the collaboration partners are set with
+
+		\lstinline!\partnerlogos{ntnu_partner.png}{ntnu_partner_neg.png}!
+
+		The \texttt{horizontal} style displays the second logo of the
+		collaboration partner (\lstinline!ntnu_partner_neg.png!,
+		preferable white/light colors) in the footer while the first
+		logo (\lstinline!ntnu_partner.png!) is placed above the title
+		(see previous slide).
+	\end{frame}
+\end{document}

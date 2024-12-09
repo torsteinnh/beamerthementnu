@@ -14,20 +14,26 @@
 	\leavevmode%
 	\centering
 	\hbox{%
-	\begin{beamercolorbox}[wd=.667\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,left]{palette tertiary}%
- 			\hspace*{3em}%
-            \vspace*{.1\footlineheight}%
-            \usebeamercolor[fg]{page number in head/foot}%
-    		\usebeamerfont{page number in head/foot}%
+	\begin{beamercolorbox}[wd=.334\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,left]{palette tertiary}%
+			\hspace*{3em}%
+			\vspace*{.1\footlineheight}%
+			\usebeamercolor[fg]{page number in head/foot}%
+			\usebeamerfont{page number in head/foot}%
 			\insertframenumber{}%
 			\ifntnu@displayTotalFrameNumber%
 				\ /\ \inserttotalframenumber%
 			\fi%
-		\end{beamercolorbox}\hspace{-.1pt}%Hacked up to now
-		\begin{beamercolorbox}[wd=.3331\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,right]{palette tertiary}%
+		\end{beamercolorbox}\hspace{-.001\paperwidth}% overlap to prevent visible gaps
+		\begin{beamercolorbox}[wd=.334\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,center]{palette tertiary}%
+			\ifntnu@displayPartner%
+				\vspace*{-.1\footlineheight}%
+				\includegraphics[height=.8\footlineheight]{\ntnu@partnerfootlogo}%
+			\fi%
+		\end{beamercolorbox}\hspace{-.001\paperwidth}% overlap to prevent visible gaps
+		\begin{beamercolorbox}[wd=.334\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,right]{palette tertiary}%
             \hfill%
             \vspace*{-.1\footlineheight}%
-            \includegraphics[height=.8\footlineheight]{ntnu_uten_slagord_neg.png}%
+            \includegraphics[height=.8\footlineheight]{\ntnu@footlogo}%
  			\hspace*{2em}%
  		\end{beamercolorbox}%
  	}%
@@ -38,11 +44,11 @@
 	\centering
 	\hbox{%
 	\begin{beamercolorbox}[wd=.667\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,left]{palette tertiary}%
-	\end{beamercolorbox}\hspace{-.1pt}%Hacked up to now
-		\begin{beamercolorbox}[wd=.3331\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,right]{palette tertiary}%
+	\end{beamercolorbox}\hspace{-.001\paperwidth}% overlap to prevent visible gaps
+		\begin{beamercolorbox}[wd=.334\paperwidth,ht=\footlineheight,dp=0.4\footlineheight,right]{palette tertiary}%
             \hfill%
             \vspace*{-.1\footlineheight}
-            \includegraphics[height=.8\footlineheight]{ntnu_uten_slagord_neg.png}%
+            \includegraphics[height=.8\footlineheight]{\ntnu@footlogo}%
  			\hspace*{2em}%
  		\end{beamercolorbox}%
  	}%

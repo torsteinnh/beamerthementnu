@@ -15,9 +15,16 @@
     \vfill%
     \centering
     \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{institute}
-        \includegraphics[width=0.7\textwidth]{\ntnu@titlelogo}
+        \ifntnu@displayPartner%
+            \includegraphics[height=.15\paperheight,width=0.4\textwidth,keepaspectratio]{\ntnu@titlelogo}%
+            \hspace{0.1\textwidth}
+            \includegraphics[height=.15\paperheight,width=0.4\textwidth,keepaspectratio]{\ntnu@partnerlogo}%
+        \else%
+            \includegraphics[height=.15\paperheight,width=0.7\textwidth,keepaspectratio]{\ntnu@titlelogo}%
+            \vskip0.5em%
+        \fi%
     \end{beamercolorbox}
-    \vskip2.5em\par
+    \vskip2em\par
     {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
     \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{title}
         \usebeamerfont{title}\MakeUppercase{\inserttitle}\par%
